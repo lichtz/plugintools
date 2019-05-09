@@ -22,7 +22,7 @@ public class PluginManager {
     private PluginAPK mPluginApk;
     private  PluginManager(){}
     public  void  init(Context context){
-        mContext = context;
+        mContext = context.getApplicationContext();
     }
     public void  loadApk(String apkPath){
         PackageInfo packageInfo = mContext.getPackageManager()
@@ -44,7 +44,7 @@ public class PluginManager {
     private AssetManager createAssetManager(String apkPath) {
         try {
             AssetManager assetManager = AssetManager.class.newInstance();
-            Method method = AssetManager.class.getDeclaredMethod("addAssetPath", String.class);;
+            Method method = AssetManager.class.getDeclaredMethod("addAssetPath", String.class);
             method.invoke(assetManager,apkPath);
             return assetManager;
         } catch (IllegalAccessException e) {

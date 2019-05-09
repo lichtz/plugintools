@@ -3,6 +3,7 @@ package com.example.licht.pluginlib;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class PluginActivity extends Activity implements Iplugin {
@@ -24,17 +25,17 @@ public class PluginActivity extends Activity implements Iplugin {
             super.onCreate(saveInstanceState);
             mProxyActivity = this;
         }
+        Log.i("zyl","PluginActivity "+"onCreate ");
     }
 
+
     @Override
-    public void setContentView(View view) {
-        if (mFrom == FROM_INTERNAL) {
-            super.setContentView(view);
+    public void setContentView(int layoutResID) {
+        if (mFrom == FROM_INTERNAL){
+            super.setContentView(layoutResID);
         }else {
-            mProxyActivity.setContentView(view);
+            mProxyActivity.setContentView(layoutResID);
         }
-
-
     }
 
     @Override

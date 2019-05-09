@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.widget.Toast;
 
 /**
  * 代理Activity 管理插件Activity的生命周期
@@ -57,5 +58,13 @@ public class ProxyActivity extends Activity {
     @Override
     public ClassLoader getClassLoader() {
         return mPluginApk !=null?mPluginApk.mClassLoader:super.getClassLoader();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mIplugin != null){
+            mIplugin.onResume();
+        }
     }
 }
