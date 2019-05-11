@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 /**
@@ -18,6 +19,7 @@ public class ProxyActivity extends Activity {
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        mClassName= getIntent().getStringExtra("className");
+       Log.i("zyl",mClassName);
         mPluginApk=PluginManager.getInstance().getmPluginApk();
         launchPluginActivity();
     }

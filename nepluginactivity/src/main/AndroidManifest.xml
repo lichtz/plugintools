@@ -3,7 +3,12 @@
     package="com.example.licht.nepluginactivity">
 
     <application>
-        <activity android:name="com.example.licht.nepluginactivity.NepluginActivity"></activity>
+        <activity android:name="com.example.licht.nepluginactivity.NepluginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

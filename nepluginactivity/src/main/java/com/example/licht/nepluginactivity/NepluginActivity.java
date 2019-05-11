@@ -23,7 +23,7 @@ public class NepluginActivity extends PluginActivity {
     @Override
     public void onResume() {
         super.onResume();
-        Toast.makeText(this,"BBB",Toast.LENGTH_SHORT).show();
+        Toast.makeText(mProxyActivity,"BBB",Toast.LENGTH_SHORT).show();
 
 
     }

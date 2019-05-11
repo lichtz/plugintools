@@ -2,12 +2,13 @@ package com.example.licht.pluginlib;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
 public class PluginActivity extends Activity implements Iplugin {
-   private Activity mProxyActivity;
+   public Activity mProxyActivity;
    private int mFrom = FROM_INTERNAL;
 
     @Override

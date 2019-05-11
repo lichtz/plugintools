@@ -5,6 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.util.Log;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
@@ -38,6 +39,7 @@ public class PluginManager {
 
     private Resources createResource(AssetManager am) {
         Resources res = mContext.getResources();
+        Log.i("zyl",am.getLocales().length+"AA");
         return new Resources(am,res.getDisplayMetrics(),res.getConfiguration());
     }
 
